@@ -1,5 +1,12 @@
 # Writing a systemd Service in Python
 
+**Index**
+
+- [System and User Services](#system-and-user-services)
+- [Creating a User Service](#creating-a-user-service)
+- [Creating a System Service](#creating-a-system-service)
+- [References](#references)
+
 Many Linux distributions use [systemd] to manage the system's services (or *daemons*), for example to automatically start certain services in the correct order when the system boots.
 
 Writing a systemd service in Python turns out to be easy, but the complexity of systemd can be daunting at first. This tutorial is intended to get you started.
@@ -282,16 +289,7 @@ After reloading the systemd configuration restarting our service, we can check t
     python_demo_service
 
 
-## Where to go from here
-
-We now have a basic implementation of a system systemd service in Python. Depending on your goal, there are many ways to go forward. Here are some ideas:
-
-* Add support for reloading the service's configuration without a hard restart. See the [`ExecReload`](https://www.freedesktop.org/software/systemd/man/systemd.service.html#ExecReload=) option.
-* Explore the other features of the [python-systemd] package, for example the [`systemd.journal`](https://www.freedesktop.org/software/systemd/python-systemd/journal.html) module for advanced interaction with the systemd journal.
-
-And of course, if you find an error in this tutorial or have an addition, feel free to create an issue or a pull request.
-
-Happy coding!
+## References
 
 
 [python-systemd]: https://github.com/systemd/python-systemd
@@ -304,4 +302,3 @@ Happy coding!
 [systemd.special]: https://www.freedesktop.org/software/systemd/man/systemd.special.html
 [systemd.target]: https://www.freedesktop.org/software/systemd/man/systemd.target.html
 [useradd]: https://linux.die.net/man/8/useradd
-
