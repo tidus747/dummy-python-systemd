@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+PACKAGE_NAME=python-dummy-service
+
+clean:
+	dh $@
+
+build:
+	dh $@
+override_dh_auto_install:
+	mkdir -p debian/$(PACKAGE_NAME)/usr/bin
+	mkdir -p debian/$(PACKAGE_NAME)/etc/dummy-systemd-package
+	install -D -m 755 dummy.py debian/$(PACKAGE_NAME)/usr/bin/dummy-systemd-script
+	install -D -m 644 config_file.json debian/$(PACKAGE_NAME)/etc/dummy-systemd-package/config.json
+
+	dh_auto_install
+	dh_systemd_enable  || true
+	dh_systemd_start --no-start || true
+binary:
+	dh $@ --with-systemd, python3

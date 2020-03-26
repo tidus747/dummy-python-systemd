@@ -1,16 +1,14 @@
-# systemd unit file for the Python Demo Service
-
 
 [Unit]
 
 # Human readable name of the unit
-Description=Python Demo Service
+Description=Python Dummy Service
 
 
 [Service]
 
 # Command to execute when the service is started
-ExecStart=/usr/bin/python /usr/local/lib/python_demo_service/python_demo_service.py
+ExecStart=/usr/bin/python /home/irodrigu/Proyectos/dummy-python-systemd/python_dummy_service.py
 
 # Disable Python's buffering of STDOUT and STDERR, so that output from the
 # service shows up immediately in systemd's logs
@@ -23,7 +21,7 @@ Restart=on-failure
 Type=notify
 
 # Use a dedicated user to run our service
-User=python_demo_service
+User=python_dummy_service
 
 
 [Install]

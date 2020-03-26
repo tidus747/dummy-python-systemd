@@ -1,0 +1,13 @@
+[Unit]
+Description=Dummy python service
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=5
+ExecStart=/usr/bin/dummy-systemd-script
+ExecStop=/bin/kill -SIGINT ${MAINPID}
+
+
+[Install]
+WantedBy=default.target

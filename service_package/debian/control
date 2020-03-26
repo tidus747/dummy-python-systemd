@@ -1,0 +1,10 @@
+Source: python-dummy-service
+Section: main
+Priority: optional
+Maintainer: Ivan Rodriguez <piensa3d.dudas@gmail.com>
+Build-Depends: debhelper (>= 9), dh-systemd (>= 1.5)
+
+Package: python-dummy-service
+Architecture: all
+Depends: ${misc:Depends},${python3:Depends}, python3:all
+Description: This is the main software application for a dummy python service example.

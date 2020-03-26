@@ -1,4 +1,5 @@
-# Python script for the Python Demo Service
+#! /usr/bin/python3
+# Python script for the Python Dummy Service
 
 if __name__ == '__main__':
     import time
@@ -11,6 +12,6 @@ if __name__ == '__main__':
     systemd.daemon.notify('READY=1')
 
     while True:
-        print('Hello from the Python Demo Service')
+        print('Hello from the Python Dummy Service')
         time.sleep(5)
 
